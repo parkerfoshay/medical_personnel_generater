@@ -1,0 +1,16 @@
+[
+  {
+    "country": "string",
+    "country_code": "string",
+    "medical_personnel": [
+      {
+        "year": 2020,
+        "nurses_per_capita": 0,
+        "doctors_per_capita": 0,
+        "dentists_per_capita": 0,
+        "pharmacists_per_capita": 0
+      }
+    ]
+
+  }
+]
