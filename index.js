@@ -19,7 +19,6 @@ for (let i = 0; i < dentists.length; i++) {
 }
 
 const test = [];
-console.log(newDataObj.length)
 
 for (let i = 0; i < 191; i++) {
   let dentistsTest = dentists.filter((e) => e.Location === newDataObj[i].country);
@@ -34,19 +33,19 @@ for (let i = 0; i < 191; i++) {
       let testObj = {
         location: dentistsTest[j].Location,
         year,
-        dentists_per_capita: dentistsTest[j]?.Value,
-        doctors_per_capita: doctorsTest[j]?.Value,
-        nurses_per_capita: nursesTest[j]?.Value,
-        pharmacists_per_capita: pharmacistsTest[j]?.Value,
+        dentists_per_capita: parseFloat(dentistsTest[j]?.Value),
+        doctors_per_capita: parseFloat(doctorsTest[j]?.Value),
+        nurses_per_capita: parseFloat(nursesTest[j]?.Value),
+        pharmacists_per_capita: parseFloat(pharmacistsTest[j]?.Value,)
       };
       test.push(testObj);
     }
-    console.log(j);
+   
     year = parseInt(dentistsTest[j + 1]?.Period);
   }
 }
 
-
+console.log(test.length);
 let dictstring = JSON.stringify(test);
 
 fs.writeFile("generated-records.json", dictstring, function (err, result) {
